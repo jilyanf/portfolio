@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jilliane Ferolino | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=light_mode" />
+</head>
+<body>
+    <!-- Navigation Bar (appears on all pages) -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <span>🌟</span>
+                    <span>Jilliane</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="mode-toggle">
+                    <span class="material-symbols-outlined">
+                        light_mode
+                    </span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Hi! <span class="wave">👋</span></h1>
+            <h2>I'm Jilliane Ferolino</h2>
+            <p>A passionate 3rd year Computer Science student<br>at the University of the Philippines Cebu.</p>
+            <div class="welcome-text">Welcome to my portfolio!</div>
+            <a href="#about" class="scroll-down">Scroll Down to See More</a>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h3>About Me</h3>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="greeting">Oh Hello!</h2>
+                    <p>
+                        I'm Jilliane Ferolino, a third year Computer Science student at the 
+                        University of the Philippines Cebu. I'm particularly interested
+                        in frontend development, UI/UX design. I love creating clean,
+                        responsive, and user-friendly interfaces that look great but also
+                        feel intuitive.
+                    </p>
+
+                    <p>
+                        Outside of coding, I'm into photography and various sports, which
+                        often inspire my creativity and influence my design approach. While
+                        my passion lies in frontend development and design, I'm also eager 
+                        to expand my skills in backend development to become a more 
+                        well-rounded developer.
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <h3>SKILLED WITH</h3>
+            <div class="skills-container">
+                <!-- Skills icons would go here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <p class="section-description">A glimpse of the work I've done so far.</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img"></div>
+                    <h3>Project One</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae velit sit amet nisl hendrerit rhoncus.</p>
+                    <div class="project-links">
+                        <a href="#">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img"></div>
+                    <h3>Project Two</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae velit sit amet nisl hendrerit rhoncus.</p>
+                    <div class="project-links">
+                        <a href="#">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img"></div>
+                    <h3>Project Three</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae velit sit amet nisl hendrerit rhoncus.</p>
+                    <div class="project-links">
+                        <a href="#">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>CONTACT ME</h2>
+            
+            <div class="contact-content">
+                <div class="contact-text">
+                    <h3>Let's Talk!</h3>
+                    <p>Feel free to reach out to me for collaborations, questions, or just to say hello!</p>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Jilliane Ferolino. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
