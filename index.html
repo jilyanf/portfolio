@@ -20,10 +20,10 @@
                     <span>Jilliane</span>
                 </div>
                 <div class="nav-links">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#portfolio">Portfolio</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#hero" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link"  data-section="about">About</a>
+                    <a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a>
+                    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
                 </div>
                 <div class="mode-toggle">
                     <span class="material-symbols-outlined">
@@ -35,7 +35,7 @@
     </header>
 
     <!-- Home Section -->
-    <section id="home" class="hero">
+    <section id="hero" class="hero">
         <div class="container">
             <h1>Hi! <span class="wave">👋</span></h1>
             <h2>I'm Jilliane Ferolino</h2>
@@ -119,19 +119,30 @@
                     <div class="project-img"></div>
                     <h2>Fit24Connect</h2>
                     <p class="status ongoing">Ongoing</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae velit sit amet nisl hendrerit rhoncus.</p>
+                    <p>
+                        A smart gym management app for Fit24 Fitness Gym, offering 
+                        QR-based access, trainer support, and real-time membership 
+                        tracking to streamline gym operations.
+                    </p>
                     <div class="project-links">
-                        <a href="#">View Details</a>
+                        <a href="https://github.com/JATorres-zxc/fit24ConnectFrontend" target="_blank" rel="noopener noreferrer">
+                            Github
+                        </a>
                     </div>
                 </div>
                 
                 <div class="project-card">
                     <div class="project-img"></div>
-                    <h2>Project Two</h2>
+                    <h2>Music Player</h2>
                     <p class="status ongoing">Ongoing</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae velit sit amet nisl hendrerit rhoncus.</p>
+                    <p>
+                        A sleek and responsive music player app that allows users 
+                        to browse, play, and manage audio tracks.
+                    </p>
                     <div class="project-links">
-                        <a href="#">View Details</a>
+                        <a href="https://github.com/jilyanf/musicplayer" target="_blank" rel="noopener noreferrer">
+                            Github
+                        </a>
                     </div>
                 </div>
                 
@@ -197,5 +208,30 @@
             <p>&copy; 2025 Jilliane Ferolino. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+      
+        window.addEventListener("scroll", () => {
+          let current = "";
+      
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop - 150;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+              current = section.getAttribute("id");
+            }
+          });
+      
+          navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+      
 </body>
 </html>
