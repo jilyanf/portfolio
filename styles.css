@@ -1,16 +1,33 @@
-/* Base Styles */
+/* Dark Mode (default) */
 :root {
-    --dark-bg: #000b18;
+    --bg: #000b18;
     --text-header: #95BFFF;
-    --dark-bg-lighter: #00172D;
-    --dark-bg-darker: #0a0a0a;
-    --white: #f2f2f2;
+    --bg-lighter: #00172D;
+    --bg-darker: #0a0a0a;
+    --secondary: #f2f2f2;
     --text-muted: #a0a0a0;
     --accent-color: #4a6fa5;
     --accent-hover: #5f84bb;
-    --border-color: #333333;
-    --input-bg: #2a2a2a;
+
+    --contact-h2: #95BFFF1A;
     --card-bg: #0d1726;
+    --card-img-bg: #1e2d45;
+}
+
+/* Light Mode */
+[data-theme="light"] {
+    --bg: #f0f8ff;
+    --text-header: #0052a2;
+    --bg-lighter: #DFF0FF;
+    --bg-darker: #0a0a0a;
+    --secondary: #000b18;
+    --text-muted: #a0a0a0;
+    --accent-color: #4a6fa5;
+    --accent-hover: #4e6fa3;
+
+    --contact-h2: #000B181A;
+    --card-bg: #e8f0fa;
+    --card-img-bg: #dbe9f5;
 }
 
 * {
@@ -27,8 +44,8 @@ body {
 
 body {
     font-family: 'Instrument Sans', sans-serif;
-    background-color: var(--dark-bg);
-    color: var(--white);
+    background-color: var(--bg);
+    color: var(--secondary);
     line-height: 1.6;
 }
 
@@ -38,7 +55,7 @@ body {
     padding: 0 2rem;
 }
 
-h1, h2, h3 {
+h1, h3 {
     font-weight: 700;
     margin-bottom: 1.5rem;
 }
@@ -61,7 +78,7 @@ p {
 }
 
 a {
-    color: var(--white);
+    color: var(--secondary);
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -100,8 +117,8 @@ nav {
 }
 
 .navbar {
-    background-color: var(--dark-bg);
-    border: var(--white) 1px solid;
+    background-color: var(--bg);
+    border: var(--secondary) 1px solid;
     border-radius: 25px;
     padding: 0.5vw 1vw;
     display: flex;
@@ -131,12 +148,27 @@ nav {
     color: var(--text-header);
 }
 
+.mode-toggle {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+  
+.mode-toggle:hover {
+    color: var(--primary-color);
+}
+  
+
 /* Hero Section */
 .hero {
     min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.hero h1 {
+    font-weight: bold;
+    font-size: 5rem;
 }
 
 .wave {
@@ -156,11 +188,19 @@ nav {
     100% { transform: rotate(0deg); }
 }
 
+.hero h2 {
+    font-weight: 500;
+}
+
+.hero p {
+    font-weight: 500;
+}
+
 .welcome-text {
     font-style: italic;
     font-size: 1.5rem;
     margin: 2rem 0;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 .scroll-down {
@@ -173,8 +213,8 @@ nav {
 
 /* About Section */
 .about {
-    background-color: var(--dark-bg);
-    min-height: 80vh;
+    background-color: var(--bg);
+    min-height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -195,8 +235,9 @@ nav {
 
 .about h2 {
     text-align: center;
-    color: var(--white);
+    color: var(--secondary);
     font-size: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 .about-content {
@@ -207,14 +248,14 @@ nav {
 
 .greeting {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: bold;
     margin-bottom: 1.5rem;
 }
 
 /* Skills Section */
 .skills {
     padding: 3rem 0;
-    background-color: var(--dark-bg);
+    background-color: var(--bg);
 }
 
 .skills .container {
@@ -229,7 +270,7 @@ nav {
 }
 
 .skills h3 {
-    color: var(--white);
+    color: var(--secondary);
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 2px;
@@ -281,7 +322,7 @@ nav {
 
 /* Portfolio Section */
 .portfolio {
-    background-color: var(--dark-bg);
+    background-color: var(--bg);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -322,7 +363,7 @@ nav {
 
 .project-img {
     height: 200px;
-    background-color: #1e2d45;
+    background-color: var(--card-img-bg);
 }
 
 .project-card h2 {
@@ -341,12 +382,12 @@ nav {
   
 .status.ongoing {
     background-color: #28a745;
-    color: white;
+    color: var(--secondary);
 }
   
 .status.completed {
     background-color: #6c757d;
-    color: white;
+    color: var(--secondary);
 }
 
 .project-card p {
@@ -371,7 +412,7 @@ nav {
 
 /* Contact Section */
 .contact {
-    background-color: var(--dark-bg);
+    background-color: var(--bg);
     position: relative;
 }
 
@@ -382,7 +423,7 @@ nav {
     text-align: center;
     font-size: 8rem;
     letter-spacing: 0.5rem;
-    color: #95BFFF1A;
+    color: var(--contact-h2);
 }
 
 .contact-content {
@@ -392,8 +433,8 @@ nav {
     grid-template-columns: 1fr 2fr;
     max-width: 1000px;
     margin: 0 auto;
-    background-color: var(--dark-bg);
-    border: var(--white) 1px solid;
+    background-color: var(--bg);
+    border: var(--secondary) 1px solid;
     border-radius: 12px;
 }
 
@@ -433,16 +474,16 @@ label {
     display: block;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
-    color: var(--white);
+    color: var(--secondary);
 }
 
 input, textarea {
     width: 100%;
     padding: 0.8rem;
-    background-color: var(--dark-bg-lighter);
-    border: 1px solid var(--white);
+    background-color: var(--bg-lighter);
+    border: 1px solid var(--secondary);
     border-radius: 8px;
-    color: var(--white);
+    color: var(--secondary);
     font-family: inherit;
 }
 
@@ -451,8 +492,8 @@ textarea {
 }
 
 .submit-btn {
-    background-color: var(--white);
-    color: var(--dark-bg);
+    background-color: var(--secondary);
+    color: var(--bg);
     border: none;
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
@@ -468,8 +509,8 @@ textarea {
 
 /* Footer */
 footer {
-    background-color: var(--dark-bg-darker);
-    padding: 1.5rem 0;
+    background-color: var(--bg-darker);
+    padding: 1rem 0;
     text-align: center;
     color: var(--text-muted);
     font-size: 0.9rem;
@@ -555,8 +596,9 @@ footer {
         font-size: 1rem;
     }
 
-    .mode-toggle .material-symbols-outlined {
-        font-size: 0.8rem; 
+    .mode-toggle svg {
+        width: 0.9rem;
+        height: 0.9rem;
     }
     
     .nav-links {

@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=light_mode" />
 </head>
 <body>
     <!-- Navigation Bar (appears on all pages) -->
@@ -25,10 +24,23 @@
                     <a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a>
                     <a href="#contact" class="nav-link" data-section="contact">Contact</a>
                 </div>
-                <div class="mode-toggle">
-                    <span class="material-symbols-outlined">
-                        light_mode
-                    </span>
+                <div class="mode-toggle" id="theme-toggle">
+                    <!-- Moon icon for dark mode -->
+                    <svg id="dark-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <!-- Sun icon for light mode -->
+                    <svg id="light-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
                 </div>
             </nav>
         </div>
@@ -38,7 +50,7 @@
     <section id="hero" class="hero">
         <div class="container">
             <h1>Hi! <span class="wave">👋</span></h1>
-            <h2>I'm Jilliane Ferolino</h2>
+            <h2>I'm <b>Jilliane Ferolino</b></h2>
             <p>A passionate 3rd year Computer Science student<br>at the University of the Philippines Cebu.</p>
             <div class="welcome-text">Welcome to my portfolio!</div>
             <a href="#about" class="scroll-down">Scroll Down to See More</a>
@@ -149,7 +161,7 @@
                 <div class="project-card">
                     <div class="project-img"></div>
                     <h2>Project Three</h2>
-                    <p class="status ongoing">Ongoing</p>
+                    <p class="status ongoing">Status</p>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae velit sit amet nisl hendrerit rhoncus.</p>
                     <div class="project-links">
                         <a href="#">View Details</a>
@@ -231,6 +243,41 @@
             }
           });
         });
+
+        const toggle = document.getElementById('theme-toggle');
+        const darkIcon = document.getElementById('dark-icon');
+        const lightIcon = document.getElementById('light-icon');
+        const root = document.documentElement;
+
+        // Default to dark mode unless user previously set light
+        const savedTheme = localStorage.getItem('theme');
+
+        if (savedTheme === 'light') {
+            root.setAttribute('data-theme', 'light');
+            darkIcon.style.display = 'none';
+            lightIcon.style.display = 'block';
+        } else {
+            root.setAttribute('data-theme', 'dark');
+            darkIcon.style.display = 'block';
+            lightIcon.style.display = 'none';
+        }
+
+        toggle.addEventListener('click', () => {
+            const isDark = root.getAttribute('data-theme') === 'dark';
+
+            if (isDark) {
+                root.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                darkIcon.style.display = 'none';
+                lightIcon.style.display = 'block';
+            } else {
+                root.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                darkIcon.style.display = 'block';
+                lightIcon.style.display = 'none';
+            }
+        });
+
     </script>
       
 </body>
