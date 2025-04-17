@@ -182,21 +182,27 @@
                     <p>Have a question or want to work together? Fill out the form and I'll get back to you soon.</p>
                 </div>
                 
-                <form class="contact-form">
+                <form 
+                    class="contact-form"
+                    id="myForm"
+                    onsubmit="clearForm()"
+                    action="https://formspree.io/f/mvgknloz"
+                    method="POST"
+                >
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName">
+                            <input type="text" id="firstName" name="first_name" required>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName">
+                            <input type="text" id="lastName" name="last_name" required>
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email">
+                        <input type="email" id="email" name="email" required>
                     </div>
                     
                     <div class="form-group">
@@ -206,7 +212,7 @@
                     
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5"></textarea>
+                        <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
                     
                     <button type="submit" class="submit-btn">Send Message</button>
@@ -254,12 +260,12 @@
 
         if (savedTheme === 'light') {
             root.setAttribute('data-theme', 'light');
-            darkIcon.style.display = 'none';
-            lightIcon.style.display = 'block';
-        } else {
-            root.setAttribute('data-theme', 'dark');
             darkIcon.style.display = 'block';
             lightIcon.style.display = 'none';
+        } else {
+            root.setAttribute('data-theme', 'dark');
+            darkIcon.style.display = 'none';
+            lightIcon.style.display = 'block';
         }
 
         toggle.addEventListener('click', () => {
@@ -268,16 +274,21 @@
             if (isDark) {
                 root.setAttribute('data-theme', 'light');
                 localStorage.setItem('theme', 'light');
-                darkIcon.style.display = 'none';
-                lightIcon.style.display = 'block';
+                darkIcon.style.display = 'block';
+                lightIcon.style.display = 'none';
             } else {
                 root.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
-                darkIcon.style.display = 'block';
-                lightIcon.style.display = 'none';
+                darkIcon.style.display = 'none';
+                lightIcon.style.display = 'block';
             }
         });
-
+        
+        function clearForm() {
+            setTimeout(() => {
+            document.getElementById("myForm").reset();
+            }, 100); // Delay to ensure form is submitted before clearing
+        }
     </script>
       
 </body>
