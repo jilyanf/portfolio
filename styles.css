@@ -405,7 +405,7 @@ nav {
 }
   
 .status.completed {
-    background-color: #6c757d;
+    background-color: rgb(39, 40, 116);
     color: var(--status);
 }
 
