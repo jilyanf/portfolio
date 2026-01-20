@@ -403,6 +403,11 @@ nav {
     background-color: #28a745;
     color: var(--status);
 }
+
+.status.paused {
+    background-color: #a72828;
+    color: var(--status);
+}
   
 .status.completed {
     background-color: rgb(39, 40, 116);
